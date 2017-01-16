@@ -24,16 +24,14 @@ script:
 cache: apt
 
 before_deploy:
-  - name=${PWD##*/}
   - cd ..
-  - tar czf "$name.tar.gz" "$name"
-  - ls
+  - tar czf couchdb.tar.gz couchdb
 
 deploy:
   provider: releases
   api_key:
     secure: GgNZWF4A0xs3i7twrOK9XhSomgHw4EU6Fx/+pp5n1+kupKfxc/mCPFew9YFk4AEHa71xedqsMlfvzaF4kBgJjPBplO1wcgEtsNddBQyMTzR8T3AJYImiiu6CIVnZcJuwjWfsL5fGcvn/ASu1L+c+b2nDXfqiXX6MvOyL2f6H/BYvA/GXbkmMfNKrOGC+Br9GdZ193E5cchu7NdAZj7ihVUo4+a6JpruoZ6EqMcb8k7EKYPIW/HR+XCc8ndZJPiOOSos/DEsDkosOdmsmS705I/EuvwvJXeZHGHVXSNdwb0WAk5tuoQL7lcI5KljtC7o3bs5OoCRiqQC9f+74SaUW2pEMWdRKfip2X8cl36h2EWUROqscQUKnBlEm6EdfL23roxMdEQUoZ2LKtc5SoFHxArW60nnEVhJRyrxx58sO057nVWiKkyBoYIAuWEXe9Fdi30zAaPdpbEFar7nNMbvf0WEirlHLRN6Dk57jDZ4x6BIXYBQQtUpYkfLFJw9moysxZaHn1gjKfNK6TV5KKWCh0iqqt9CkpR/Q8yh4Q5Owl3c3/EiQDyNwUCJCQQ9CeDkVluxPYO/YOKBs4hUpuz1jawkdEkx/hZrT1TBUvu65EjG1nuZOXn9EsKZxKKAI3rRmdLQQOcJGdGAHWsaMUEi/g7AdGIHEAD0nnvl+h5gJ3XU=
-  file: couchdb-peruser.tar.gz
+  file: couchdb.tar.gz
   on:
     repo: tlvince/couchdb-peruser
     tags: true
