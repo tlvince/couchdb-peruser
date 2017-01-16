@@ -27,6 +27,7 @@ before_deploy:
   - name=${PWD##*/}
   - cd ..
   - tar czf "$name.tar.gz" "$name"
+  - ls
 
 deploy:
   provider: releases
