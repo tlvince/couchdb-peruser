@@ -23,6 +23,7 @@ cache: apt
 
 before_deploy:
   - tar czf couchdb-peruser.tar.gz src/couch_peruser/ebin
+  - ls
 
 deploy:
   provider: releases
