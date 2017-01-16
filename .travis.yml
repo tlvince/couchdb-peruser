@@ -10,6 +10,7 @@ before_install:
 
 before_script:
   - cd couchdb
+  - git checkout 2.0.0
   - ./configure --disable-docs --disable-fauxton
   - cp -r ../!(couchdb) ./src/couch_peruser
   - make
